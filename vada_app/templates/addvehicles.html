@@ -1,0 +1,38 @@
+{% extends "adminlayout.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Add Vehicles</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4  border border-secondary  bg-tertiary  m-auto">
+            <h1 class="text-center">Add Vehicles</h1>
+            <form  method="post" enctype="multipart/form-data">
+                {% csrf_token%}
+                {{form|crispy}}
+                <div class=" mt-3 d-flex justify-content-center">
+                    <input class=" btn btn-primary" type="submit" value="Add Vehicles">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

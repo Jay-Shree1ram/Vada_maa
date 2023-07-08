@@ -1,0 +1,45 @@
+{% extends "adminlayout.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Show Category</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Category Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for v in category %}
+        <tr >
+            <td>{{v.category_name}}</td>
+            <td>
+                <a  class="btn btn-warning text-decoration-none" href="/updatecategory/{{v.id}}">Update</a>
+            
+
+                <a class=" ms-2 btn btn-danger text-decoration-none " href="/deletecategory/{{v.id}}" >Delete</a>
+              
+            </td>
+        </tr>
+    {% endfor%}
+  
+
+</table>
+
+{% endblock %}

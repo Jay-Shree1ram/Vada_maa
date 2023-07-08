@@ -1,0 +1,53 @@
+{% extends "adminlayout.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Show Vehicles</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Vehicles Image</th>
+        <th>Vehicles Type</th>
+        <th>Rate</th>
+        <th>Number</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </tr>
+    {% for v in vehicle %}
+        <tr >
+            <td><img src=/{{v.vehicles_image}} alt="" height="200"></td>
+            <td>{{v.vehicles_type}}</td>
+            <td>{{v.vehicles_rate}}/day</td>
+            <td>{{v.vehicles_no}}</td>
+            <td>{{v.category.category_name}}</td>
+            <td>
+                <a  class="btn btn-warning text-decoration-none" href="/updatevehicles/{{v.id}}">Update</a>
+            
+
+                <a class=" ms-2 btn btn-danger text-decoration-none " href="/deletevehicles/{{v.id}}" >Delete</a>
+              
+            </td>
+        </tr>
+    {% endfor%}
+  
+
+</table>
+
+{% endblock %}

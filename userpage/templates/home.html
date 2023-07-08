@@ -1,0 +1,279 @@
+{% extends "frontend.html"%}
+
+{% block title%}
+<title>Vada Maa</title>
+{% endblock %}
+
+{% block main_content %}
+
+
+ <!-- carousel section start -->
+<section class="custom-carousel" id="carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://th.bing.com/th/id/R.fc609584b98244f9bf5b84cec81ac8b9?rik=raU8Siqq0xS0Sg&pid=ImgRaw&r=0" class="d-block w-100" height="650" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/image/bikes.jpg" class="d-block w-100" height="650" alt="image to be">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/image/bus.jpg" class="d-block w-100" height="650" alt="image to be">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <!-- carousel section end -->
+
+  <!-- vehicles section start -->
+<section id="vehicles">
+  <div class="row mb-4">
+    <h2 class="text-center my-3 fw-bold">Vehicles</h2>
+    {% for i in vehicle%}
+    <div class=" col-md-6 col-lg-4 mb-4">
+      <div class="card ">
+      <img src=/{{i.vehicles_image}} class="card-img-top" alt="image to be" height="300">
+        <div class="card-body text-center bg-body-secondary">
+          <h5 class="card-title">{{i.vehicles_type}}</h5>
+          <h6 class="">Rate:{{i.vehicles_rate}}/Day</h6>
+          <h6 class="">Vehicle_no:{{i.vehicles_no}}</h6>
+          <a href="#" class="btn btn-outline-secondary">Book Now</a>
+          
+        </div>
+      </div>
+  
+    </div>
+    {% endfor %}
+    
+
+  </div>
+</section>
+<!-- vehicles section end -->
+  <!-- Services section start -->
+
+<section id="services" class="">
+    <div class="container ">
+        <div class="row">
+            <h2 class="text-center mb-5 fw-bolder">Our services</h2>
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mb-5">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-sharp fa-solid fa-phone-volume"></i>  
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>24h Customer Service</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mb-5">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-solid fa-hand-holding-heart"></i>  
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>Free cancellation</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 d-flex mb-5 ">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-solid fa-check"></i> 
+                    
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>Flexible bookings</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-5 d-flex ">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-sharp fa-solid fa-truck-fast"></i>  
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>tour packages</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-5 d-flex ">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-solid fa-ticket-simple"></i>
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>No booking fees</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-5 d-flex ">
+                <div class="services_icons d-flex justify-content-center align-items-center me-2">
+                    <i class="fa-solid fa-car"></i>  
+                </div>
+                <div class="services_description d-flex flex-column text-start">
+                    <h4>Top qualuty vehicles</h4>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, incidunt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- Services section end -->
+
+  <!-- testimonials section start -->
+<section id="testimonials" class=" mb-2">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10 col-xl-8 text-center">
+          <h3 class="fw-bolder mb-4">Testimonials</h3>
+          <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+            numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+            quisquam eum porro a pariatur veniam.
+          </p>
+        </div>
+      </div>
+  
+      <div class="row text-center">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="card h-100 bg-body-secondary rounded-4">
+            <div class="card-body py-4 mt-2">
+              <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+              </div>
+              <h5 class="font-weight-bold">Teresa May</h5>
+              <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+              <ul class="list-unstyled d-flex justify-content-center">
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star-half-alt fa-sm text-warning"></i>
+                </li>
+              </ul>
+              <p class="mb-2">
+                <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                ad velit ab hic tenetur.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="card h-100 bg-body-secondary rounded-4">
+            <div class="card-body py-4 mt-2">
+              <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+              </div>
+              <h5 class="font-weight-bold">Maggie McLoan</h5>
+              <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
+              <ul class="list-unstyled d-flex justify-content-center">
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+              </ul>
+              <p class="mb-2">
+                <i class="fas fa-quote-left pe-2"></i>Autem, totam debitis suscipit saepe
+                sapiente magnam officiis quaerat necessitatibus odio assumenda perferendis
+                labore laboriosam.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-0">
+          <div class="card h-100 bg-body-secondary rounded-4">
+            <div class="card-body py-4 mt-2">
+              <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                  class="rounded-circle shadow-1-strong" width="100" height="100" />
+              </div>
+              <h5 class="font-weight-bold">Alexa Horwitz</h5>
+              <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
+              <ul class="list-unstyled d-flex justify-content-center">
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="fas fa-star fa-sm text-warning"></i>
+                </li>
+                <li>
+                  <i class="far fa-star fa-sm text-warning"></i>
+                </li>
+              </ul>
+              <p class="mb-2">
+                <i class="fas fa-quote-left pe-2"></i>Cras sit amet nibh libero, in gravida
+                nulla metus scelerisque ante sollicitudin commodo cras purus odio,
+                vestibulum in tempus viverra turpis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonials section end -->
+
+  <!-- Contact section start -->
+<section id="contact">
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-4">
+          <img src="https://th.bing.com/th/id/R.1895e5e7badae7ec1576af4cc0851304?rik=XJnDg5Zu9h7bnQ&pid=ImgRaw&r=0" alt="">
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <form method="post">
+            {% csrf_token%}
+            <div class="mt-5">
+  
+              <label for="exampleInputName" class="form-label text-white">Name</label>
+              <input type="text" class="form-control" id="name" name="name">
+  
+              <label for="exampleInputEmail" class="form-label text-white">Email address</label>
+              <input type="email" class="form-control" id="email" name="email">  
+  
+              <label for="text-area" class="form-label text-white">Message</label>
+              <textarea name="message" id="message" cols="30" rows="4" class="form-control"></textarea>
+  
+            </div>
+        
+            
+            <button type="submit" class="btn btn-outline-secondary text-white mt-4">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact section end -->
+{% endblock %}
