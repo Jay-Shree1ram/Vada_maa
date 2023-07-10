@@ -3,6 +3,9 @@ from vada_app.models import *
 from vada_app.forms import *
 from django.contrib import messages
 from accounts.auth import *
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def home(request):
@@ -18,4 +21,5 @@ def home(request):
         
 
     return render(request,"home.html",context)
+
 

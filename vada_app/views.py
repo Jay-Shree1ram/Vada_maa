@@ -145,4 +145,13 @@ def Contact_us(request):
     }
     return render(request,"contact.html",context)
 
+# View users
+
+def users(request):
+    user=User.objects.all()
+    context={
+        'user':user
+    }
+    return render(request,"users.html",context)
+
 

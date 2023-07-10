@@ -1,7 +1,7 @@
 {% extends "adminlayout.html"%}
 {% load crispy_forms_tags%}
 {% block title%}
-<title>Contact_Us</title>
+<title>Users</title>
 {% endblock %}
 
 {% block main_content%}
@@ -20,20 +20,23 @@
     {% endif %}
 
 {% endfor %}
-
-<table class="table table-bordered table-secondary table-hover">
-    <h2 class="text-center">Contact_us</h2>
+<h2 class="text-center">Users</h2>
+<table class="table table-bordered table-secondary table-hover ">
     <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Message</th>
+        <th>Username</th>
+        <th>email</th>
+        <th>Is_Staff</th>
+        <th>Last Login</th>
+        <th>Is Active</th>
     </tr>
-    {% for c in contact %}
+    {% for u in user %}
         <tr >
-            <td>{{c.name}}</td>
-            <td>{{c.email}}</td>
-            <td>{{c.message}}</td>
-            
+            <td>{{u.username}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.is_staff}}</td>
+            <td>{{u.last_login}}</td>
+            <td>{{u.is_active}}</td>
+           
         </tr>
     {% endfor%}
   

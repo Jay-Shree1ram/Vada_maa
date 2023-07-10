@@ -14,5 +14,6 @@ urlpatterns = [
     path("deletecategory/<int:category_id>",deletecategory),
     path("deletevehicles/<int:vehicle_id>",deletevehicles),
     path("contact_us/",Contact_us),
+    path('users/',users),
 
 ]
