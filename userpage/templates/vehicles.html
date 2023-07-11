@@ -1,0 +1,36 @@
+{% extends 'frontend.html'%}
+{% block title%}
+<title>Vehicles</title>
+{% endblock %}
+
+{% block main_content%}
+<div class="container show ">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 ">
+            <div class="card  bg-body-secondary rounded-5">
+                <div class="row">
+                    <div class="col-md-6 bg-tertiary">
+                        <div class="images p-3">
+                            <div class="text-center p-4"> <img id="main-image" class="rounded-5" src=/{{vehicle.vehicles_image}} width="350" /> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="mt-4 mb-3"> 
+                                <h3>Details</h3>
+                                <h6 class="text-capitalize">Vehicle Type:-{{vehicle.vehicles_type}}</h6>
+                                <h6 class="text-capitalize">Rate{{vehicle.vehicles_rate}}/Day</h6>
+                                <h6 class="text-capitalize">Vehicle No:-{{vehicle.vehicles_no}}</h6>
+                                <h6 class="text-capitalize">Category:-{{vehicle.category.category_name}}</h6>
+                            
+                            </div>
+                            <a href="/booking/{{vehicle.id}}">
+                            <div class="cart mt-4 align-items-center"> <button class="btn btn-outline-secondary text-uppercase mr-2 px-4">Booking</button></div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

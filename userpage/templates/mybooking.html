@@ -1,0 +1,48 @@
+{% extends "frontend.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Vada Maa</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+<table class="table table-bordered table-secondary table-hover show">
+    <tr>
+        <th>Vehicle Type</th>
+        <th>Vehicle Image</th>
+        <th>Rate</th>
+        <th>Vehicle No</th>
+        <th>Action</th>
+    </tr>
+    {% for b in booking %}
+        <tr >
+            <td>{{b.vehicle.vehicles_type}}</td>
+            <td><img src=/{{b.vehicle.vehicles_image}} height="150"></td>
+            <td>{{b.vehicle.vehicles_rate}}</td>
+            <td>{{b.vehicle.vehicles_no}}</td>
+            <td><a href="/orderform/{{b.product_id}}/{{c.id}}"><div class="btn btn-warning me-2">Book Now</div></a>
+                <a href="/deletemybooking/{{b.id}}"><div class="btn btn-danger">Delete</div></a>
+            </td>
+            
+        </tr>
+    {% endfor%}
+
+
+</table>
+
+{% endblock %}
