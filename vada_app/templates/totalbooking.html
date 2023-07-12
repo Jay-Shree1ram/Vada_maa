@@ -1,0 +1,58 @@
+{% extends "adminlayout.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Total Bookings</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+<h2 class="text-center">Total Bookings</h2>
+<table class="table table-bordered table-secondary table-hover ">
+    <tr>
+        <th>User Name</th>
+        <th>Vehicles Type</th>
+        <th>Vehicles Image</th>
+        <th>Departure Date</th>
+        <th>Pick Up Location</th>
+        <th>Drop Off Location</th>
+        <th>Return Date</th>
+        <th>Pick Up Location</th>
+        <th>Drop Off Location</th>
+
+        
+    
+    </tr>
+    {% for bn in booknow %}
+        <tr >
+            <td>{{bn.user}}</td>
+            <td>{{bn.vehicle.vehicles_type}}</td>
+            <td><img src=/{{bn.vehicle.vehicles_image}} height="150" alt="Vehicle image"></td>
+            <td>{{bn.Departure_date}}</td>
+            <td>{{bn.Pickup_location1}}</td>
+            <td>{{bn.Dropoff_location1}}</td>
+            <td>{{bn.Return_date}}</td>
+            <td>{{bn.Pickup_location2}}</td>
+            <td>{{bn.Pickup_location2}}</td>
+        
+        
+        </tr>
+    {% endfor%}
+
+
+</table>
+
+{% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import *
 from django.contrib import messages
 from .models import * 
+from userpage.models import *
 from django.contrib.auth.decorators import login_required
 from accounts.auth import *
 from django.contrib.auth.models import User
@@ -146,12 +147,22 @@ def Contact_us(request):
     return render(request,"contact.html",context)
 
 # View users
-
+@login_required
+@admin_only
 def users(request):
     user=User.objects.all()
     context={
         'user':user
     }
     return render(request,"users.html",context)
+    
+@login_required
+@admin_only
+def Total_booking(request):
+    book_now=Book_now.objects.all()
+    context={
+        'booknow':book_now
+    }
+    return render(request,"totalbooking.html",context)
 
 

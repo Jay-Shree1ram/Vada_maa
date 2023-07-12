@@ -47,19 +47,11 @@ li {
   background-color: #82074a;
 }
 
-/* #login {
-  margin-top: 5.5rem;
-  margin-bottom: 1.5rem;
-}
-*/
-
+/* Spaces below the nav */
 .show{
   margin-top:6rem;
   margin-bottom:1.5rem;
 }
-
-
-
 
 /* header section end */
 
@@ -69,30 +61,8 @@ li {
   box-shadow: 5px 5px 10px #777777;
 } 
 
-/* booking section start */
-/* #booking {
-  margin-top: 6rem;
-} */
-/* booking section end */
-
 /* vehicle section end */
 
-/* packages section start */
-/* #packages {
-  margin-top: 5.5rem;
-}
-#packages .card:hover {
-  box-shadow: 5px 5px 10px #777777;
-} */
-/* packages section end */
-
-/* packages description section start */
-
-/* packages description section end */
-
-/* #smallnav {
-  margin-top: 4.5rem;
-} */
 /* Services section start   */
 .services_icons {
   height: 70px;
@@ -113,10 +83,7 @@ h4 {
 /* Services section end */
 
 /* testimonials section start */
-/* #testimonials h2{
-	font-weight: 700;
 
-} */
 #testimonials .card:hover {
   box-shadow: 5px 5px 10px #777777;
 }

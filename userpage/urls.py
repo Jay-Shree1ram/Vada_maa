@@ -7,6 +7,7 @@ urlpatterns = [
     path("booking/<int:vehicle_id>",Bookings),
     path('mybooking/',mybooking),
     path('deletemybooking/<int:booking_id>',Deletemybooking),
+    path('booknow/<int:vehicle_id>/<int:booking_id>',Booknow_form)
     
     
 ]

@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<!-- fontawesome cdn link css -->
+
 <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
   integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
   <link rel="icon" href="{% static 'image/favicon.png'%}">
@@ -51,18 +51,18 @@
               <li><a href="/dashboard" class="text-decoration-none text-white">Dashboard</a></li>
               <li><a href="/showvehicles" class="text-decoration-none text-white">Vehicles</a></li>
               <li><a href="/showcategory" class="text-decoration-none text-white">Categories</a></li>
-              <li><a href="#" class="text-decoration-none text-white">Bookings</a></li>
+              <li><a href="/totalbooking" class="text-decoration-none text-white">Bookings</a></li>
               <li><a href="/contact_us" class="text-decoration-none text-white">Contact</a></li>
             </ul>
           </div>
           <div class="offcanvas-body">
             <ul class="list-unstyled">
-              <li><a href="#" class="text-decoration-none text-white">
-                  <b>Name : </b> admin
-                </a></li>
-              <li><a href="#" class="text-decoration-none text-white">
-                  <b>Email : </b> admin@gmail.com
-                </a></li>
+              <li class="text-decoration-none text-white">
+                  <b>Name : </b> {{user.username}}
+                </li>
+              <li class="text-decoration-none text-white">
+                  <b>Email : </b> {{user.email}}
+                </li>
             </ul>
             <div class="img">
               <img
@@ -81,8 +81,9 @@
 {%endblock%}
 
 
-
+<!-- fontawesome cdn link  -->
 <script src="https://kit.fontawesome.com/13200b3d44.js" crossorigin="anonymous"></script>
+
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

@@ -1,0 +1,140 @@
+{% extends "frontend.html"%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Vada Maa</title>
+{% endblock %}
+
+{% block main_content%}
+
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    {% endif %}
+
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{message}}
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+<section id="booking">
+    <div class="row">
+        <div class="col-lg ">
+           
+            <div class=" bg-body-secondary mb-2 show">
+                <form class="row g-3" method="post">
+                    {% csrf_token%}
+                    <div class="col-lg-4 ">
+                    <label for="Departure_date" class="form-label ms-3"><h6>Departure Date</h6> </label>
+                    <input type="date" class="form-control" name="Departure_date" id="Departure_date">
+                    </div>
+
+                    <div class="col-lg-4 ">
+                    <label for="Pickup_location1" class="form-label ms-3"><h6>Pick up Location</h6> </label>
+                    <input type="text" class="form-control" name="Pickup_location1" id="Pickup_location1">
+                    </div>
+
+                    <div class="col-lg-4">
+                        <label for="Dropoff_location1" class="form-label ms-3"><h6> Drop off Location</h6></label>
+                        <input type="text" class="form-control" name="Dropoff_location1" id=" Dropoff_location1">
+                    </div>
+                    <div class="col-lg-4">
+                    <label for="Return_date" class="form-label ms-3"><h6>Return  Date</h6> </label>
+                    <input type="date" class="form-control" name="Return_date" id="Return_date">
+                    </div>
+
+                    <div class="col-lg-4">
+                    <label for="Pickup_location2" class="form-label ms-3"><h6>Pick up Location</h6> </label>
+                    <input type="text" class="form-control" name="Pickup_location2" id="Pickup_location2">
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <label for="Dropoff_location2" class="form-label ms-3"><h6>Drop off Location</h6></label>
+                        <input type="text" class="form-control" name="Dropoff_location2" id="Dropoff_location2">
+                    </div>
+
+                    <div class="col-12 booknow  ">
+                      <button type="submit" class="btn btn-outline-secondary px-3 ms-3">BOOK NOW</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/13200b3d44.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+  </body>
+</html>

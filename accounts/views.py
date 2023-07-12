@@ -51,4 +51,4 @@ def signin(request):
 def logout1(request):
     logout(request)
     messages.add_message(request,messages.SUCCESS,"Logout Successful.")
-    return redirect("/accounts/login")
+    return redirect("/")
